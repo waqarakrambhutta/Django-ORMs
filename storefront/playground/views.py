@@ -5,6 +5,6 @@ from store.models import Product
 
 
 def say_hello(request):
-    queryset = Product.objects.filter(description__)
+    queryset = Product.objects.filter(description__isnull=True)
 
     return render(request, 'hello.html', {'name': 'Waqar','products':list(queryset)})
