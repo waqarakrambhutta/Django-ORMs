@@ -5,6 +5,6 @@ from store.models import Product
 
 
 def say_hello(request):
-    queryset = Product.objects.filter(id=F('orderitem__product_id')).order_by('title').distinct()
+    queryset = Product.objects.defer('description','slug','last_update')
     
     return render(request, 'hello.html', {'name': 'Waqar','products':list(queryset)})
