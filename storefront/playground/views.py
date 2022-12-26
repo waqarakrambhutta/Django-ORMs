@@ -5,6 +5,6 @@ from store.models import Product
 
 
 def say_hello(request):
-    queryset = Product.objects.defer('description','slug','last_update')
+    queryset = Product.objects.select_related('collection__someOtherField').all()
     
     return render(request, 'hello.html', {'name': 'Waqar','products':list(queryset)})

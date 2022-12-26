@@ -1,3 +1,4 @@
 {
-  "python.pythonPath": "/Users/moshfeghhamedani/.local/share/virtualenvs/storefront-Xk9k71tz/bin/python"
+  "python.pythonPath": "/Users/moshfeghhamedani/.local/share/virtualenvs/storefront-Xk9k71tz/bin/python",
+  "livePreview.defaultPreviewPath": "/home/waqar/Coding/Code with Mosh/Resources/Code/5- Django ORM/Start/Django-ORMs/storefront/playground/templates/hello.html"
 }
