@@ -6,7 +6,6 @@ from store.models import Product
 
 
 def say_hello(request):
-    # queryset = Product.objects.prefetch_related('promotions').select_related('collection').all()
-    queryset = Product.objects.filter(title__startswith='E')
+    queryset = Product.objects.select_related('Customer').all()
     
     return render(request, 'hello.html', {'name': 'Waqar','products':list(queryset)})
