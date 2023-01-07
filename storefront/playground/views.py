@@ -6,7 +6,7 @@ from store.models import Product
 
 
 def say_hello(request):
-    result=Product.objects.aggregate(Min('unit_price'))
+    result=Product.objects.aggregate(Count('unit_price'))
     
     return render(request, 'hello.html', {'name': 'Waqar','result':result})
     
