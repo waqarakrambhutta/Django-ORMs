@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.db.models.aggregates import Count
+from django.db.models.aggregates import Count,Max
 from store.models import Product
 
 
