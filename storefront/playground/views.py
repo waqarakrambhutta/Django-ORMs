@@ -1,20 +1,16 @@
 from django.shortcuts import render
 from store.models import Product
 from django.contrib.contenttypes.models import ContentType
-from store.models import Product,Collection
+from tags.models import Tag
 
 def say_hello(request):
-    
-    collection = Collection()
-    collection.title= 'Video games.'
-    # collection.featured_product = Product(pk=1)
-    collection.featured_product_id = 1
-    collection.save()
-    collection.id
+    # tag=Tag()
+    # tag.label='this is first tag.'
+    # tag.save()
+    # tag.id
 
-    # this is shorter approch but i'll not prefer it.
-    # collection= Collection.objects.create(title='video game',featured_product=1)
-    # collection.id
+    Tag.objects.create(label='this is my second tag')
+    
 
     return render(request, 'hello.html', {'name': 'Waqar'})
 
