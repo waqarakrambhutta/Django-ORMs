@@ -1,14 +1,10 @@
 from django.shortcuts import render
-from store.models import Product
+from django.db import transaction
 from django.contrib.contenttypes.models import ContentType
-from store.models import Collection
+from store.models import Product
 
 def say_hello(request):
+   
+   result = Product.objects.all().order_by('-pk')[:10]
 
-    # collection = Collection(pk=11)
-    # collection.delete()
-
-    Collection.objects.filter(pk__range=(14,24)).delete()
-
-    return render(request, 'hello.html', {'name': 'Waqar'})
-
+   return render(request, 'hello.html', {'name': 'Waqar','result':list(result)})
